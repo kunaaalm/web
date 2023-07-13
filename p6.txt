@@ -1,0 +1,230 @@
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+PROGRAM – 6
+XML AND JSON PARSER APPLICATION
+Create two files of XML and JSON type with values for 
+City_Name, Latitude, Longitude, Temperature, and Humidity. 
+Develop an application to create an activity with two buttons 
+to parse the XML and JSON files which when clicked should 
+display the data in their respective layouts side by side.
+XML CODE 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:orientation="vertical"
+ tools:context=".MainActivity">
+ <TextView
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="XML and JSON Parser"
+ android:textSize="35sp"
+ android:textColor="#FF06"
+ android:textAlignment="center"
+ android:layout_gravity="center"/>
+ <Button
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:text="XML PARSER"
+ android:textAlignment="center"
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+ android:onClick="XMLparser"
+ android:gravity="center_horizontal"></Button>
+ <Button
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:text="JSON PARSER"
+ android:textAlignment="center"
+ android:onClick="JSONparser"
+ android:gravity="center_horizontal"></Button>
+ <LinearLayout
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:layout_gravity="center">
+ <TextView
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/resxml"
+ android:textSize="15sp"
+ android:textColor="@color/teal_700"
+ android:textAlignment="center"
+ android:paddingLeft="10dp"
+ android:paddingRight="40dp"
+ android:gravity="center_horizontal"></TextView>
+ <TextView
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/resjson"
+ android:textSize="15sp"
+ android:textColor="#FF01"
+ android:textAlignment="center"
+ android:paddingLeft="40dp"
+ android:gravity="center_horizontal" />
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+</LinearLayout>
+</LinearLayout>
+JAVA CODE 
+package com.example.jsonxmlparsing;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+public class MainActivity extends AppCompatActivity {
+ TextView resxml,resjson;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ resxml=findViewById(R.id.resxml);
+ resjson=findViewById(R.id.resjson);
+ }
+ public void XMLparser(View v)
+ {
+ try {
+ InputStream is=getAssets().open("city.xml");
+ DocumentBuilderFactory 
+dbFactory=DocumentBuilderFactory.newInstance();
+ DocumentBuilder 
+dBuilder=dbFactory.newDocumentBuilder();
+ Document doc=dBuilder.parse(is);
+ Element element=doc.getDocumentElement();
+ element.normalize();
+ NodeList nList=doc.getElementsByTagName("place");
+ resxml.setText("XML DATA");
+ for (int i=0;i<nList.getLength();i++)
+ {
+ Node node=nList.item(i);
+ if(node.getNodeType()==Node.ELEMENT_NODE)
+ {
+ Element element2=(Element)node;
+ resxml.setText(resxml.getText()+"\n City 
+Name:"+getValue("cityname",element2)+"\n");
+ resxml.setText(resxml.getText()+"\n
+Lattitude:"+getValue("lat",element2)+"\n");
+ resxml.setText(resxml.getText()+"\n
+Longitude:"+getValue("long",element2)+"\n");
+ resxml.setText(resxml.getText()+"\n
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+Temperature:"+getValue("temp",element2)+"\n");
+ resxml.setText(resxml.getText()+"\n
+Humidity:"+getValue("humidity",element2)+"\n");
+ resxml.setText(resxml.getText()+"\n----------
+---------------");
+ }
+ }
+ } catch (IOException | ParserConfigurationException | 
+SAXException e) {
+ e.printStackTrace();
+ }
+ }
+ private static String getValue(String tag, Element element)
+ {
+ NodeList 
+nodeList=element.getElementsByTagName(tag).item(0).getChildNodes(
+);
+ Node node=nodeList.item(0);
+ return node.getNodeValue();
+ }
+ public void JSONparser(View v)
+ {
+ String json;
+ try {
+ InputStream is=getAssets().open("city1.json");
+ int size=is.available();
+ byte[] buffer=new byte[size];
+ is.read(buffer);
+ is.close();
+ json=new String(buffer,"UTF-8");
+ JSONArray jsonarray=new JSONArray(json);
+ resjson.setText("JSON DATA");
+ for(int i=0; i<jsonarray.length();i++)
+ {
+ JSONObject obj=jsonarray.getJSONObject(i);
+ resjson.setText(resjson.getText()+"\n City 
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+Name:"+obj.getString("name")+"\n");
+ resjson.setText(resjson.getText()+"\n
+Lattitude:"+obj.getString("lat")+"\n");
+ resjson.setText(resjson.getText()+"\n
+Longitude:"+obj.getString("long")+"\n");
+ resjson.setText(resjson.getText()+"\n
+Temperature:"+obj.getString("temp")+"\n");
+ resjson.setText(resjson.getText()+"\n
+Humidity:"+obj.getString("humidity")+"\n");
+ resjson.setText(resjson.getText()+"\n -----------
+----------");
+ }
+ } catch (IOException | JSONException e) {
+ e.printStackTrace();
+ }
+ }
+}
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+JSON.txt FILE
+[
+{
+ "name": "Mysore",
+ "lat":"96.65",
+ "long":"76.63",
+ "temp":"32",
+ "humidity":"80%"
+},
+{
+ "name": "Bangalore",
+ "lat":"96.97",
+ "long":"76.76",
+ "temp":"20",
+ "humidity":"70%"
+}
+]
+XML.txt FILE
+<?xml version="1.0"?>
+<records>
+<place>
+<cityname>Mysore</cityname>
+<lat>96.95</lat>
+<long>76.63</long>
+<temp>32</temp>
+<humidity>80%</humidity>
+</place>
+<place>
+<cityname>Bangalore</cityname>
+<lat>96.69</lat>
+<long>76.73</long>
+<temp>25</temp>
+<humidity>70%</humidity>
+</place>
+</records>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+OUTPUTS/SCREENSHOTS
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering, JCER

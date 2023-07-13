@@ -1,0 +1,280 @@
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 1
+PROGRAM – 1
+1. Create an application to design a Visiting card. The Visiting Card should have a 
+company logo at the top right corner. The company name should be displayed in 
+Capital letters, aligned to the center. Information like the name of the employee, job 
+title, phone number, address, email, fax, and the website address is to be displayed. 
+Insert a horizontal line between the company name and other details.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+XML Code 
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:background="#080B2E"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <TextView
+ android:id="@+id/textView"
+ android:layout_width="167dp"
+ android:layout_height="wrap_content"
+ android:layout_alignParentStart="true"
+ android:layout_alignParentLeft="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginStart="120dp"
+ android:layout_marginLeft="120dp"
+ android:layout_marginBottom="553dp"
+ android:gravity="center_horizontal"
+ android:text="JCER"
+ android:textAlignment="center"
+ android:textAllCaps="true"
+ android:textColor="#3F51B5"
+ android:textSize="65sp" />
+<View
+ android:id="@+id/view"
+ android:layout_width="match_parent"
+ android:layout_height="8dp"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_marginEnd="0dp"
+ android:layout_marginRight="0dp"
+ android:layout_marginBottom="520dp"
+ android:background="#DDC1C1" />
+Mobile Application Development Lab
+– 18CSMP68
+Department of Computer Science and Engineering , JCER Page 
+2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<TextView
+ android:id="@+id/textView2"
+ android:layout_width="275dp"
+ android:layout_height="57dp"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginEnd="70dp"
+ android:layout_marginRight="70dp"
+ android:layout_marginBottom="432dp"
+ android:gravity="center_horizontal"
+ android:text="NAME : KUNAL MORDEKAR
+" android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+<TextView
+ android:id="@+id/textView4"
+ android:layout_width="218dp"
+ android:layout_height="41dp"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerInParent="true"
+ android:layout_marginEnd="105dp"
+ android:layout_marginRight="105dp"
+ android:layout_marginBottom="389dp"
+ android:gravity="center_horizontal"
+ android:text="USN : 2JR20CS023"
+ android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+<TextView
+ android:id="@+id/textView6"
+ android:layout_width="289dp"
+ android:layout_height="50dp"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerInParent="true"
+ android:layout_marginEnd="67dp"
+ android:layout_marginRight="67dp"
+ android:layout_marginBottom="320dp"
+ android:gravity="center_horizontal"
+ android:text="Mobile NO : 9606672360
+ android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 3
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<TextView
+ android:id="@+id/textView8"
+ android:layout_width="269dp"
+ android:layout_height="40dp"
+ android:layout_alignParentStart="true"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginStart="55dp"
+ android:layout_marginEnd="86dp"
+ android:layout_marginRight="86dp"
+ android:layout_marginBottom="270dp"
+ android:gravity="center_horizontal"
+ android:text="BRANCH : CSE"
+ android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+ <TextView
+ android:id="@+id/textView3"
+ android:layout_width="327dp"
+ android:layout_height="49dp"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginEnd="29dp"
+ android:layout_marginRight="29dp"
+ android:layout_marginBottom="127dp"
+ android:gravity="center_horizontal"
+ android:text="E-mail : kunalmordekar1@gmail.
+com". 
+ android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+ <TextView
+ android:id="@+id/textView5"
+ android:layout_width="wrap_content"
+ android:layout_height="55dp"
+ android:layout_alignParentStart="true"
+ android:layout_alignParentLeft="true"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginStart="53dp"
+ android:layout_marginLeft="53dp"
+ android:layout_marginEnd="43dp"
+ android:layout_marginRight="43dp"
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+android:layout_marginBottom="195dp"
+ android:gravity="center_horizontal"
+ android:text="ADDRESS : Majagavi Belagavi, Karnataka"
+ android:textAlignment="center"
+ android:textColor="#FFEB3B"
+ android:textSize="20sp" />
+ <ImageView
+ android:id="@+id/imageView"
+ android:layout_width="98dp"
+ android:layout_height="63dp"
+ android:layout_alignParentTop="true"
+ android:layout_alignParentEnd="true"
+ android:layout_alignParentBottom="true"
+ android:layout_centerHorizontal="true"
+ android:layout_marginTop="26dp"
+ android:layout_marginEnd="153dp"
+ android:layout_marginBottom="641dp"
+ app:srcCompat="@drawable/jgi" />
+ <TextView
+ android:id="@+id/textView7"
+ android:layout_width="149dp"
+ android:layout_height="0dp"
+ android:layout_alignParentBottom="true"
+ android:layout_marginBottom="584dp"
+ android:text="JCER" />
+</RelativeLayout>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 7
+OUTPUT:

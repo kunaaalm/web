@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity"
+ android:orientation="vertical">
+ <EditText
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="Enter the first number"
+ android:id="@+id/num1"
+ android:textColorHint="#31313A"
+ android:textSize="30sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal" />
+ <EditText
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="Enter the second number"
+ android:id="@+id/num2"
+ android:textColorHint="#31313A"
+ android:textSize="30sp"
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 9
+ android:textAlignment="center"
+ android:gravity="center_horizontal"/>
+ <TextView
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:id="@+id/res"
+ android:text="Result"
+ android:textSize="30sp"
+ android:textAlignment="center"
+ android:textColor="#31313A"
+ android:gravity="center_horizontal"/>
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:textAlignment="center"
+ android:gravity="center_horizontal">
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="7"
+ android:id="@+id/seven"
+ android:textSize="20sp"
+ android:onClick="seven"
+ android:textAlignment="center"
+ android:layout_margin="10sp"
+ android:gravity="center_horizontal"/>
+ <Button
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 10
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="8"
+ android:id="@+id/eight"
+ android:textSize="20sp"
+ android:onClick="eight"
+ android:textAlignment="center"
+ android:layout_margin="10sp"
+ android:gravity="center_horizontal" />
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="9"
+ android:id="@+id/nine"
+ android:onClick="nine"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:layout_margin="10sp"
+ android:gravity="center_horizontal" />
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="/"
+ android:textSize="20sp"
+ android:id="@+id/divide"
+ android:onClick="divide"
+ android:textAlignment="center"
+ android:layout_margin="10sp"
+ android:gravity="center_horizontal"/>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 11
+ </LinearLayout>
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:textAlignment="center"
+ android:gravity="center_horizontal">
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/four"
+ android:text="4"
+ android:onClick="four"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"
+ android:textSize="20sp"/>
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/five"
+ android:text="5"
+ android:onClick="five"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+android:layout_margin="10sp"/>
+ 
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 12
+<Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/six"
+ android:text="6"
+ android:onClick="six"
+android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:textSize="20sp"
+ android:layout_margin="10sp"/>
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="*"
+ android:id="@+id/multiply"
+ android:onClick="multiply"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+ </LinearLayout>
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:textAlignment="center"
+ android:gravity="center_horizontal">
+ 
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 13
+<Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="1"
+ android:textSize="20sp"
+ android:id="@+id/one"
+ android:onClick="one"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+<Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="2"
+ android:id="@+id/two"
+ android:onClick="two"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="3"
+ android:id="@+id/three"
+ android:textSize="20sp"
+ android:onClick="three"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 14
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="-"
+ android:id="@+id/minus"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:onClick="minus"
+ android:layout_margin="10sp"/>
+ </LinearLayout>
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:textAlignment="center"
+ android:gravity="center_horizontal">
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="."
+ android:id="@+id/dot"
+ android:onClick="dot"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp" />
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 15
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="0"
+ android:id="@+id/zero"
+ android:textSize="20sp"
+ android:onClick="zero"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="="
+ android:id="@+id/equals"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:textSize="20sp"
+ android:onClick="equals"
+ android:layout_margin="10sp" />
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="+"
+ android:id="@+id/plus"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"
+ android:onClick="plus"/>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 16
+ </LinearLayout>
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:textAlignment="center"
+ android:orientation="horizontal"
+ android:gravity="center_horizontal">
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="CE"
+ android:id="@+id/clearEverything"
+ android:textSize="20sp"
+ android:onClick="clearOneDigit"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="AC"
+ android:id="@+id/allClear"
+ android:onClick="allClear"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp" />
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 17
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="C"
+ android:id="@+id/clear"
+ android:onClick="clearOneField"
+ android:textSize="20sp"
+ android:textAlignment="center"
+ android:gravity="center_horizontal"
+ android:layout_margin="10sp"/>
+ </LinearLayout>
+</LinearLayout>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 18
+JAVA CODE 
+package com.simplecalculator;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+ EditText number1, number2;
+ TextView result;
+ char op;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ number1 = findViewById(R.id.num1);
+ number2 = findViewById(R.id.num2);
+ result = findViewById(R.id.res);
+ }
+ public void one(View v)
+ {
+ if(number1.hasFocus())
+ {
+ number1.append("1");
+ }
+ else
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 19
+ if(number2.hasFocus())
+ {
+ number2.append("1");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void two(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("2");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("2");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void three(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("3");
+ else
+ if(number2.hasFocus())
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 20
+ {
+ number2.append("3");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void four(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("4");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("4");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void five(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("5");
+ else
+ if(number2.hasFocus())
+ {
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 21
+ number2.append("5");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void six(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("6");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("6");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void seven(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("7");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("7");
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 22
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void eight(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("8");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("8");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void nine(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("9");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("9");
+ }
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 23
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void zero(View v)
+ {
+ if(number1.hasFocus())
+ number1.append("0");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append("0");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void dot(View v)
+ {
+ if(number1.hasFocus())
+ number1.append(".");
+ else
+ if(number2.hasFocus())
+ {
+ number2.append(".");
+ }
+ else
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 24
+ {
+ Toast.makeText(this, "Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void plus(View v)
+ {
+ op = '+';
+ }
+ public void minus(View v)
+ {
+ op = '-';
+ }
+ public void multiply(View v)
+ {
+ op = '*';
+ }
+ public void divide(View v)
+ {
+ op = '/';
+ }
+ public void equals(View v)
+ {
+ float n1,n2,r;
+ switch(op)
+ {
+ case '+' : n1 = Float.parseFloat(number1.getText().toString());
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 25
+ n2 = Float.parseFloat(number2.getText().toString());
+ r = n1 + n2;
+ result.setText("" + n1 + "+" + n2 + "=" + r);
+ break;
+ case '-' : n1 = Float.parseFloat(number1.getText().toString());
+ n2 = Float.parseFloat(number2.getText().toString());
+ r = n1 - n2;
+ result.setText("" + n1 + "-" + n2 + "=" + r);
+ break;
+ case '*' : n1 = Float.parseFloat(number1.getText().toString());
+ n2 = Float.parseFloat(number2.getText().toString());
+ r = n1 * n2;
+ result.setText("" + n1 + "*" + n2 + "=" + r);
+ break;
+ case '/' : n1 = Float.parseFloat(number1.getText().toString());
+ n2 = Float.parseFloat(number2.getText().toString());
+ r = n1 / n2;
+ result.setText("" + n1 + "/" + n2 + "=" + r);
+ break;
+ }
+ }
+ public void allClear(View v)
+ {
+ number1.setText("");
+ number2.setText("");
+ result.setText("");
+ }
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 26
+ public void clearOneField(View v)
+ {
+ if(number1.hasFocus())
+ {
+ number1.setText("");
+ result.setText("");
+ }
+ else
+ if(number2.hasFocus())
+ {
+ number2.setText("");
+ result.setText("");
+ }
+ else
+ {
+ Toast.makeText(this, "Please get the focus of First/Second Field", 
+Toast.LENGTH_SHORT).show();
+ }
+ }
+ public void clearOneDigit(View v)
+ {
+ if(number1.hasFocus())
+ {
+ String n;
+ n = number1.getText().toString();
+ n = n.substring(0,n.length()-1);
+ number1.setText(n);
+ result.setText("");
+ }
+ else
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 27
+ if(number2.hasFocus())
+ {
+ String n;
+ n = number2.getText().toString();
+ n = n.substring(0,n.length()-1);
+ // System.out.println(n);
+ number2.setText(n);
+ result.setText("");
+ }
+ else
+ {
+ Toast.makeText(this,"Please get the focus of First/Second 
+Field",Toast.LENGTH_LONG).show();
+ }
+ }}

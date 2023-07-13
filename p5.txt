@@ -1,0 +1,108 @@
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 1
+PROGRAM - 5
+Design a app to create an activity with two buttons start and stop. On 
+pressing the start button, the activity must start the counter by displaying 
+the numbers from 1 and the counter must keep on counting until the stop 
+button is pressed. Display the counter value in a TextView control.
+XML Code for Counter Application
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#FFFFFF"
+android:orientation="vertical"
+tools:context=".MainActivity">
+<TextView
+ android:id="@+id/textView"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center_horizontal"
+ android:background="#28B3BF"
+ android:gravity="center"
+ android:text="@string/counter_application"
+ android:textAlignment="center"
+ android:textColor="#FFFFFF"
+ android:textSize="36sp" />
+<TextView
+ android:id="@+id/counter"
+ android:layout_width="match_parent"
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 2
+ android:layout_height="wrap_content"
+ android:layout_marginTop="15dp"
+ android:gravity="center_horizontal"
+ android:hint="Counter Value"
+ android:textAlignment="center"
+ android:textColor="@color/black"
+ android:textSize="40sp" />
+<Button
+ android:id="@+id/start"
+ android:layout_width="300dp"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center_horizontal"
+ android:layout_marginTop="15dp"
+ android:gravity="center_horizontal"
+ android:onClick="startCounter"
+ android:text="@string/start"
+ android:textAlignment="center"
+ android:textSize="30sp"
+ app:backgroundTint="#15D635" />
+<Button
+ android:id="@+id/stop"
+ android:layout_width="300dp"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center_horizontal"
+ android:layout_marginTop="15dp"
+ android:onClick="stopCounter"
+ android:background="#FFFFFF"
+ android:text="@string/stop"
+ android:textSize="30sp"
+ app:backgroundTint="#DD1313" />
+</LinearLayout>
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 3
+Java Code for Counter Application
+package com.app.B_counterapplication;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity
+{
+TextView tv;
+Handler myhandler = new Handler();
+int i;
+@Override
+protected void onCreate(Bundle savedInstanceState)
+{
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ tv = findViewById(R.id.counter);
+}
+public void startCounter(View v)
+{
+ int i=0;
+ myhandler.postDelayed(Threadcount,500);
+}
+public void stopCounter(View v)
+{
+ myhandler.removeCallbacks(Threadcount);
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 4
+}
+public Runnable Threadcount = new Runnable() {
+ @Override
+ public void run() {
+ tv.setText("" + i);
+ i++;
+ myhandler.postDelayed(Threadcount,1000);
+ }
+};
+}
+Mobile Application Development Lab – 18CSMP68
+Department of Computer Science and Engineering , JCER Page 5
+Screenshots of Output for Program-5
